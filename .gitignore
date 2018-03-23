@@ -24,3 +24,9 @@ hs_err_pid*
 # project config
 .settings/*
 target/*
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
