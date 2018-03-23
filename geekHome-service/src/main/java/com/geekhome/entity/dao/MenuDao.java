@@ -32,7 +32,8 @@ public interface MenuDao extends JpaRepository<Menu, Long>{
 	@Query(nativeQuery = true, value = "SELECT COUNT(1) FROM MENU WHERE ID=:parentId")
 	int getMenuByParentIdCnt(@Param("parentId") Long parentId);
 
-	@Modifying(clearAutomatically = true)
+	@Override
+    @Modifying(clearAutomatically = true)
 	@Transactional
 	@Query(nativeQuery = true, value = "DELETE FROM MENU WHERE ID=:parentId OR PARENT_ID=:parentId")
 	public void delete(@Param("parentId") Long parentId);

@@ -73,7 +73,7 @@ public class LabelController {
 				childs = new ArrayList<>();
 				for (int j = 0; j < labels.size(); j++) {
 					Long parentId = labels.get(j).getParentId();
-					if (id == parentId) {
+					if (id.equals(parentId)) {
 						childs.add(labels.get(j));
 					}
 				}
@@ -111,7 +111,7 @@ public class LabelController {
 						Long parentId = labels.get(j).getParentId();
 						String name = labels.get(j).getLableName();
 						
-						if (id == parentId) {
+						if (id.equals(parentId)) {
 							childsTree.setText(name);
 							childsTree.setLabelId(childId);
 							childsTree.setSelectedIcon("");

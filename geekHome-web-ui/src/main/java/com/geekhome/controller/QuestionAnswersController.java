@@ -43,7 +43,7 @@ public class QuestionAnswersController {
 	public MarkdownUploadImage uploadImage(@RequestParam("editormd-image-file") MultipartFile file) throws IOException {
 		try {
 			String fileName = file.getOriginalFilename();
-			String realPath = new Date().getTime() + fileName.substring(fileName.lastIndexOf("."));
+			String realPath = System.currentTimeMillis() + fileName.substring(fileName.lastIndexOf("."));
 			File tempFile = new File(upload_dir + realPath);
 			FileUtil.uploadImage(tempFile, file);
 			return new MarkdownUploadImage(1, "上传成功！", realPath);

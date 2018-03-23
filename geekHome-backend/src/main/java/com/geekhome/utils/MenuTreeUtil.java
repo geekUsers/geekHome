@@ -105,7 +105,7 @@ public class MenuTreeUtil {
 	public List<Menu> getChilds(Menu parentNode) {
 		List<Menu> childNodes = new ArrayList<Menu>();
 		for (Menu node : nodes) {
-			if (node.getParentId() == parentNode.getId()) {
+			if (node.getParentId().equals(parentNode.getId())) {
 				childNodes.add(node);
 			}
 		}
@@ -144,7 +144,7 @@ public class MenuTreeUtil {
 		List<Menu> list = new ArrayList<Menu>();
 		List<Menu> childNodes = getChilds(node);
 		for (Menu childNode : childNodes) {
-			if(childNode.getType().equals("menu")) {
+			if("menu".equals(childNode.getType())) {
 				List<Menu> childs = buildTreeGridChilds(childNode);
 				childNode.setChildren(childs);
 				list.add(childNode);

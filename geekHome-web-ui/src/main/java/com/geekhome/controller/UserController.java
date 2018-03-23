@@ -112,7 +112,7 @@ public class UserController {
 
 			String resStr = "{}";
 
-			HashMap<String, String> map = new HashMap<>();
+			HashMap<String, String> map = new HashMap<>(100);
 			String userid = "geekHome";
 			map.put("user_id", userid);
 

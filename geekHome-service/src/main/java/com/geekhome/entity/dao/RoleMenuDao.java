@@ -13,7 +13,8 @@ import com.geekhome.entity.RoleMenu;
 
 public interface RoleMenuDao extends JpaRepository<RoleMenu, Long>{
 
-	@Modifying(clearAutomatically = true)
+	@Override
+    @Modifying(clearAutomatically = true)
 	@Transactional
 	@Query(nativeQuery = true, value = "DELETE FROM ROLE_MENU WHERE MENU_ID =:id")
 	public void delete(@Param("id") Long id);
